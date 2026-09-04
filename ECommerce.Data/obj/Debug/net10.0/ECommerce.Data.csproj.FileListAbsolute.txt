@@ -1,0 +1,17 @@
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Data\bin\Debug\net10.0\ECommerce.Data.deps.json
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Data\bin\Debug\net10.0\ECommerce.Data.runtimeconfig.json
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Data\bin\Debug\net10.0\ECommerce.Data.dll
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Data\bin\Debug\net10.0\ECommerce.Data.pdb
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Data\bin\Debug\net10.0\ECommerce.Models.dll
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Data\bin\Debug\net10.0\ECommerce.Models.pdb
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Data\obj\Debug\net10.0\ECommerce.Data.csproj.AssemblyReference.cache
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Data\obj\Debug\net10.0\ECommerce.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Data\obj\Debug\net10.0\ECommerce.Data.AssemblyInfoInputs.cache
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Data\obj\Debug\net10.0\ECommerce.Data.AssemblyInfo.cs
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Data\obj\Debug\net10.0\ECommerce.Data.csproj.CoreCompileInputs.cache
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Data\obj\Debug\net10.0\ECommerc.0B8C960C.Up2Date
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Data\obj\Debug\net10.0\ECommerce.Data.dll
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Data\obj\Debug\net10.0\refint\ECommerce.Data.dll
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Data\obj\Debug\net10.0\ECommerce.Data.pdb
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Data\obj\Debug\net10.0\ECommerce.Data.genruntimeconfig.cache
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Data\obj\Debug\net10.0\ref\ECommerce.Data.dll

@@ -1,0 +1,11 @@
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Models\bin\Debug\net10.0\ECommerce.Models.deps.json
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Models\bin\Debug\net10.0\ECommerce.Models.dll
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Models\bin\Debug\net10.0\ECommerce.Models.pdb
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Models\obj\Debug\net10.0\ECommerce.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Models\obj\Debug\net10.0\ECommerce.Models.AssemblyInfoInputs.cache
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Models\obj\Debug\net10.0\ECommerce.Models.AssemblyInfo.cs
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Models\obj\Debug\net10.0\ECommerce.Models.csproj.CoreCompileInputs.cache
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Models\obj\Debug\net10.0\ECommerce.Models.dll
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Models\obj\Debug\net10.0\refint\ECommerce.Models.dll
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Models\obj\Debug\net10.0\ECommerce.Models.pdb
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Models\obj\Debug\net10.0\ref\ECommerce.Models.dll
