@@ -58,11 +58,18 @@ namespace ECommerce.API.Controllers
         public async Task<IActionResult> CreateInventory(
             Inventory inventory)
         {
-            var result =
-                await _inventoryService.CreateInventoryAsync(
-                    inventory);
+            try
+            {
+                var result =
+                    await _inventoryService.CreateInventoryAsync(
+                        inventory);
 
-            return Ok(result);
+                return Ok(result);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         // ==========================================

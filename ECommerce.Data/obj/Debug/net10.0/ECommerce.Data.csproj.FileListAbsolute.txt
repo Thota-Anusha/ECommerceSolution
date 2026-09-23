@@ -15,3 +15,4 @@ C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Data\obj\Debug\net
 C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Data\obj\Debug\net10.0\ECommerce.Data.pdb
 C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Data\obj\Debug\net10.0\ECommerce.Data.genruntimeconfig.cache
 C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Data\obj\Debug\net10.0\ref\ECommerce.Data.dll
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Data\obj\Debug\net10.0\ECommerce.Data.sourcelink.json

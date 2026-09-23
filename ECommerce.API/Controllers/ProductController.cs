@@ -2,6 +2,7 @@
 using ECommerce.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using ECommerce.Business.Excel;
 
 namespace ECommerce.API.Controllers
 {
@@ -11,10 +12,14 @@ namespace ECommerce.API.Controllers
     public class ProductController : ControllerBase
     {
         private readonly IProductService _productService;
+        private readonly ProductExcelService _productExcelService;
 
-        public ProductController(IProductService productService)
+        public ProductController(
+        IProductService productService,
+        ProductExcelService productExcelService)
         {
             _productService = productService;
+            _productExcelService = productExcelService;
         }
 
         // ==========================================
@@ -56,10 +61,17 @@ namespace ECommerce.API.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> CreateProduct(Product product)
         {
-            var createdProduct =
-                await _productService.CreateProductAsync(product);
+            try
+            {
+                var createdProduct =
+                    await _productService.CreateProductAsync(product);
 
-            return Ok(createdProduct);
+                return Ok(createdProduct);
+            }
+            catch (InvalidDataException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         // ==========================================
@@ -77,9 +89,16 @@ namespace ECommerce.API.Controllers
                 return BadRequest();
             }
 
-            await _productService.UpdateProductAsync(product);
+            try
+            {
+                await _productService.UpdateProductAsync(product);
 
-            return NoContent();
+                return NoContent();
+            }
+            catch (InvalidDataException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         // ==========================================
@@ -94,5 +113,51 @@ namespace ECommerce.API.Controllers
 
             return NoContent();
         }
+        // ==========================================
+        // BULK UPLOAD - Admin only
+        // ==========================================
+
+
+        [HttpPost("bulk-upload")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> BulkUpload(IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+            {
+                return BadRequest("Please upload an Excel file.");
+            }
+
+            if (!Path.GetExtension(file.FileName)
+                .Equals(".xlsx", StringComparison.OrdinalIgnoreCase))
+            {
+                return BadRequest("Only .xlsx Excel files are allowed.");
+            }
+
+            try
+            {
+                using var stream = file.OpenReadStream();
+
+                var products = _productExcelService.ReadProducts(stream);
+
+                if (products.Count == 0)
+                {
+                    return BadRequest(
+                        "The Excel file does not contain any products.");
+                }
+
+                await _productService.AddBulkProductsAsync(products);
+
+                return Ok(new
+                {
+                    message = "Products uploaded successfully.",
+                    count = products.Count
+                });
+            }
+            catch (InvalidDataException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        
+    }
     }
 }

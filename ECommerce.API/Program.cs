@@ -8,8 +8,34 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
 using System.Text;
+using ECommerce.Business.Excel;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// ==================================================
+// CORS - Allow React Frontend
+// ==================================================
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("ReactFrontend", policy =>
+    {
+        policy
+            .SetIsOriginAllowed(origin =>
+            {
+                if (!Uri.TryCreate(origin, UriKind.Absolute, out var uri))
+                {
+                    return false;
+                }
+
+                return uri.Host.Equals("localhost", StringComparison.OrdinalIgnoreCase)
+                    || uri.Host.Equals("127.0.0.1");
+            })
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
+    });
+});
 
 // ==================================================
 // JWT Authentication
@@ -78,6 +104,7 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IPaymentService, PaymentService>();
+builder.Services.AddScoped<ProductExcelService>();
 
 // ==================================================
 // OpenAPI / Swagger
@@ -135,6 +162,9 @@ if (app.Environment.IsDevelopment())
 // ==================================================
 
 app.UseHttpsRedirection();
+
+// IMPORTANT: CORS must be before authentication/authorization
+app.UseCors("ReactFrontend");
 
 app.UseAuthentication();
 

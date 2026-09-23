@@ -90,10 +90,16 @@ namespace ECommerce.Business.Services
                         .GetByProductIdAsync(
                             cartItem.ProductId);
 
-                if (inventory == null ||
-                    inventory.Quantity < cartItem.Quantity)
+                if (inventory == null)
                 {
-                    return null;
+                    throw new InvalidOperationException(
+                        $"Inventory is not available for Product ID {cartItem.ProductId}.");
+                }
+
+                if (inventory.Quantity < cartItem.Quantity)
+                {
+                    throw new InvalidOperationException(
+                        $"Insufficient inventory for Product ID {cartItem.ProductId}. Available quantity: {inventory.Quantity}.");
                 }
             }
 

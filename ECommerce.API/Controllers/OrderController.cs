@@ -63,15 +63,22 @@ namespace ECommerce.API.Controllers
         {
             var userId = GetUserId();
 
-            var order =
-                await _orderService.CreateOrderAsync(userId);
-
-            if (order == null)
+            try
             {
-                return BadRequest("Cart is empty or does not exist.");
-            }
+                var order =
+                    await _orderService.CreateOrderAsync(userId);
 
-            return Ok(order);
+                if (order == null)
+                {
+                    return BadRequest("Cart is empty or does not exist.");
+                }
+
+                return Ok(order);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         // ==========================================

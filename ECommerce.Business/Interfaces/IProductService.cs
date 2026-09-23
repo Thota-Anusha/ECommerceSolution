@@ -6,6 +6,8 @@ namespace ECommerce.Business.Interfaces
     {
         Task<IEnumerable<Product>> GetAllProductsAsync();
 
+        Task AddBulkProductsAsync(IEnumerable<Product> products);
+
         Task<Product?> GetProductByIdAsync(int id);
 
         Task<Product> CreateProductAsync(Product product);

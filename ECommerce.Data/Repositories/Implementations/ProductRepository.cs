@@ -31,6 +31,11 @@ namespace ECommerce.Data.Repositories.Implementations
 
             return product;
         }
+        public async Task AddRangeAsync(IEnumerable<Product> products)
+        {
+            await _context.Products.AddRangeAsync(products);
+            await _context.SaveChangesAsync();
+        }
 
         public async Task UpdateAsync(Product product)
         {

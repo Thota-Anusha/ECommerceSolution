@@ -13,10 +13,25 @@ namespace ECommerce.Business.Services
             _cartRepository = cartRepository;
         }
 
-        public async Task<Cart?> GetCartAsync(int userId)
+        public async Task<CartResponse?> GetCartAsync(int userId)
         {
-            return await _cartRepository
+            var cart = await _cartRepository
                 .GetCartByUserIdAsync(userId);
+
+            if (cart == null)
+            {
+                return null;
+            }
+
+            var cartItems = await _cartRepository
+                .GetCartItemsAsync(cart.CartId);
+
+            return new CartResponse
+            {
+                CartId = cart.CartId,
+                UserId = cart.UserId,
+                CartItems = cartItems
+            };
         }
 
         public async Task<Cart> AddToCartAsync(

@@ -9,3 +9,4 @@ C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Models\obj\Debug\n
 C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Models\obj\Debug\net10.0\refint\ECommerce.Models.dll
 C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Models\obj\Debug\net10.0\ECommerce.Models.pdb
 C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Models\obj\Debug\net10.0\ref\ECommerce.Models.dll
+C:\Users\AnushaThota\source\repos\ECommerceSolution\ECommerce.Models\obj\Debug\net10.0\ECommerce.Models.sourcelink.json

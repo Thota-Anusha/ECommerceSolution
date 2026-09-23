@@ -6,6 +6,8 @@ namespace ECommerce.Data.Repositories.Interfaces
     {
         Task<IEnumerable<Product>> GetAllAsync();
 
+        Task AddRangeAsync(IEnumerable<Product> products);
+
         Task<Product?> GetByIdAsync(int id);
 
         Task<Product> AddAsync(Product product);

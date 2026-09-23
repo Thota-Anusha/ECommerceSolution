@@ -4,7 +4,7 @@ namespace ECommerce.Business.Interfaces
 {
     public interface ICartService
     {
-        Task<Cart?> GetCartAsync(int userId);
+        Task<CartResponse> GetCartAsync(int userId);
 
         Task<Cart> AddToCartAsync(
             int userId,
